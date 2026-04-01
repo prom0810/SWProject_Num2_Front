@@ -30,7 +30,6 @@ export default function HighRiskTable({ items, emptyMessage = '현재 조회된 
               <th>이탈 점수</th>
               <th>판단 기준값</th>
               <th>위험 등급</th>
-              <th>생성일시</th>
             </tr>
           </thead>
           <tbody>
@@ -46,7 +45,6 @@ export default function HighRiskTable({ items, emptyMessage = '현재 조회된 
                   <td>
                     <span className={`risk-badge risk-${cls}`}>{level}</span>
                   </td>
-                  <td>{item.created_at ?? '-'}</td>
                 </tr>
               );
             })}
