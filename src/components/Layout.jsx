@@ -11,8 +11,8 @@ export default function Layout() {
             </svg>
           </div>
           <div className="header-titles">
-            <h1>고객 이탈 예측</h1>
-            <p className="header-sub">React + FastAPI + ML Model</p>
+            <h1>SI형 고객 이탈 관리 솔루션</h1>
+            <p className="header-sub">통신사 기반 데이터를 통해 기업 내부의 업무를 지원하는 서비스</p>
           </div>
         </div>
         <nav className="nav-tabs">

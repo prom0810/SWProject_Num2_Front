@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { getRiskLevel, getRiskClass } from '../utils/riskLevel';
+import { toPercent } from '../utils/format';
 
 const COLLAPSED_COUNT = 5;
 
@@ -40,8 +41,8 @@ export default function HighRiskTable({ items, emptyMessage = '현재 조회된 
               return (
                 <tr key={`${item.customer_id}-${index}`}>
                   <td>{item.customer_id}</td>
-                  <td>{Number(item.score).toFixed(4)}</td>
-                  <td>{Number(threshold).toFixed(4)}</td>
+                  <td>{toPercent(item.score)}</td>
+                  <td>{toPercent(threshold)}</td>
                   <td>
                     <span className={`risk-badge risk-${cls}`}>{level}</span>
                   </td>

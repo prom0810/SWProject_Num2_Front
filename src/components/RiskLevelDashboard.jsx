@@ -1,4 +1,5 @@
 import { getRiskLevel, isThresholdExceeded } from '../utils/riskLevel';
+import { toPercent } from '../utils/format';
 
 const LEVELS = [
   { key: '안전', label: '안전', sub: '이탈 가능성 낮음', cls: 'level-low' },
@@ -25,7 +26,7 @@ export default function RiskLevelDashboard({ result }) {
       <p className="section-kicker">위험도</p>
       <h2>이탈 위험도 대시보드</h2>
       <p className="helper-text">
-        안전: 이탈 점수 &lt; 기준값 · 위험: 기준값 ≤ 이탈 점수 &lt; 0.75 · 매우 위험: 이탈 점수 ≥ 0.75
+        안전: 이탈 점수 &lt; 기준값 · 위험: 기준값 ≤ 이탈 점수 &lt; 75% · 매우 위험: 이탈 점수 ≥ 75%
       </p>
 
       <div className="risk-level-grid">
@@ -43,11 +44,11 @@ export default function RiskLevelDashboard({ result }) {
       <div className="mini-stat-grid compact-top">
         <div>
           <span className="meta-label">이탈 점수</span>
-          <strong>{Number(result.score).toFixed(4)}</strong>
+          <strong>{toPercent(result.score)}</strong>
         </div>
         <div>
           <span className="meta-label">판단 기준값</span>
-          <strong>{Number(result.threshold).toFixed(4)}</strong>
+          <strong>{toPercent(result.threshold)}</strong>
         </div>
         <div>
           <span className="meta-label">기준값 초과 여부</span>

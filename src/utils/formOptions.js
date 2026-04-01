@@ -1,7 +1,7 @@
 export const yesNoOptions = ['Yes', 'No'];
 export const seniorCitizenOptions = [
-  { label: '아니오 (0)', value: 0 },
-  { label: '예 (1)', value: 1 },
+  { label: 'No', value: 0 },
+  { label: 'Yes', value: 1 },
 ];
 export const genderOptions = ['Female', 'Male'];
 export const multipleLinesOptions = ['No', 'Yes', 'No phone service'];

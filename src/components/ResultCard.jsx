@@ -1,4 +1,5 @@
 import StatusBadge from './StatusBadge';
+import { toPercent } from '../utils/format';
 
 export default function ResultCard({ result }) {
   if (!result) return null;
@@ -20,11 +21,11 @@ export default function ResultCard({ result }) {
         </div>
         <div>
           <span className="meta-label">이탈 점수</span>
-          <strong>{Number(result.score).toFixed(4)}</strong>
+          <strong>{toPercent(result.score)}</strong>
         </div>
         <div>
           <span className="meta-label">판단 기준값</span>
-          <strong>{Number(result.threshold).toFixed(4)}</strong>
+          <strong>{toPercent(result.threshold)}</strong>
         </div>
         <div>
           <span className="meta-label">예측 결과</span>

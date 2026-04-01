@@ -1,4 +1,5 @@
 import StatusBadge from './StatusBadge';
+import { toPercent } from '../utils/format';
 
 export default function RecentPredictionCard({ item }) {
   if (!item) {
@@ -29,11 +30,11 @@ export default function RecentPredictionCard({ item }) {
         </div>
         <div>
           <span className="meta-label">이탈 점수</span>
-          <strong>{Number(item.score).toFixed(4)}</strong>
+          <strong>{toPercent(item.score)}</strong>
         </div>
         <div>
           <span className="meta-label">판단 기준값</span>
-          <strong>{Number(item.threshold).toFixed(4)}</strong>
+          <strong>{toPercent(item.threshold)}</strong>
         </div>
         <div>
           <span className="meta-label">저장 시각</span>

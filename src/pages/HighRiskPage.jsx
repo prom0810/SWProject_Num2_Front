@@ -5,6 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import RecentPredictionCard from '../components/RecentPredictionCard';
 import { fetchHighRiskCustomers } from '../api/predictionApi';
 import { loadRecentPrediction } from '../utils/recentPrediction';
+import { toPercent } from '../utils/format';
 
 export default function HighRiskPage() {
   const [items, setItems] = useState([]);
@@ -73,7 +74,7 @@ export default function HighRiskPage() {
         </div>
         <div className="card stat-card">
           <span className="meta-label">고위험 고객 평균 이탈 점수</span>
-          <strong>{averageScore.toFixed(4)}</strong>
+          <strong>{toPercent(averageScore)}</strong>
         </div>
       </section>
 
