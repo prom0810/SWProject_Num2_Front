@@ -6,6 +6,7 @@ import RecentPredictionCard from '../components/RecentPredictionCard';
 import { fetchHighRiskCustomers } from '../api/predictionApi';
 import { loadRecentPrediction } from '../utils/recentPrediction';
 import { toPercent } from '../utils/format';
+import RiskDistributionChart from '../components/RiskDistributionChart';
 
 export default function HighRiskPage() {
   const [items, setItems] = useState([]);
@@ -77,6 +78,8 @@ export default function HighRiskPage() {
           <strong>{toPercent(averageScore)}</strong>
         </div>
       </section>
+
+      <RiskDistributionChart items={items} />
 
       <RecentPredictionCard item={recentPrediction} />
 

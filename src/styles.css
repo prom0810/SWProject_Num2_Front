@@ -620,6 +620,112 @@ select:disabled, input:disabled {
 }
 
 /* ============================================================
+   RISK DISTRIBUTION CHART
+   ============================================================ */
+.chart-layout {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.donut-wrapper {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  display: block;
+}
+
+.donut-svg text {
+  transform: rotate(90deg);
+  transform-origin: 70px 70px;
+}
+
+.chart-legend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.legend-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.legend-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.legend-count {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  min-width: 36px;
+  text-align: right;
+}
+
+.legend-pct {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  min-width: 36px;
+  text-align: right;
+}
+
+.legend-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 2px 0;
+}
+
+.legend-summary-label {
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.legend-summary-value {
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
    ERROR / LOADING / EMPTY
    ============================================================ */
 .error-banner {
@@ -882,4 +988,7 @@ tbody tr:last-child td { border-bottom: none; }
   .app-shell { padding: 0 14px 40px; }
   .app-header { padding: 16px 14px 0; margin: 0 -14px; }
   .nav-tabs a { padding: 8px 14px; font-size: 0.82rem; }
+
+  .chart-layout { flex-direction: column; gap: 16px; }
+  .donut-wrapper { width: 120px; height: 120px; }
 }
